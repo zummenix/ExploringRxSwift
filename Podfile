@@ -5,6 +5,7 @@ target 'ExploringRxSwift' do
 
     pod 'RxSwift', '~> 3.6'
     pod 'RxCocoa', '~> 3.6'
+    pod 'Cartography', '~> 1.1'
 
 end
 

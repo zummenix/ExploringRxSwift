@@ -14,6 +14,7 @@
 		4DF415001F3F6A5F00BC4059 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DF414FF1F3F6A5F00BC4059 /* Assets.xcassets */; };
 		4DF415031F3F6A5F00BC4059 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DF415011F3F6A5F00BC4059 /* LaunchScreen.storyboard */; };
 		4DF4150E1F3F6A5F00BC4059 /* ExploringRxSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF4150D1F3F6A5F00BC4059 /* ExploringRxSwiftTests.swift */; };
+		4DF415191F404E6E00BC4059 /* FancyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF415181F404E6E00BC4059 /* FancyTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +38,7 @@
 		4DF415091F3F6A5F00BC4059 /* ExploringRxSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExploringRxSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DF4150D1F3F6A5F00BC4059 /* ExploringRxSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploringRxSwiftTests.swift; sourceTree = "<group>"; };
 		4DF4150F1F3F6A5F00BC4059 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4DF415181F404E6E00BC4059 /* FancyTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FancyTextField.swift; sourceTree = "<group>"; };
 		4F1E223BAE608A8FB1E051B3 /* Pods_ExploringRxSwiftTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ExploringRxSwiftTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B49464C3A85A65FD522051C4 /* Pods-ExploringRxSwiftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExploringRxSwiftTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ExploringRxSwiftTests/Pods-ExploringRxSwiftTests.release.xcconfig"; sourceTree = "<group>"; };
 		C60F4BDF957F5DCE054C7F49 /* Pods-ExploringRxSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExploringRxSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-ExploringRxSwift/Pods-ExploringRxSwift.release.xcconfig"; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				4DF414F81F3F6A5F00BC4059 /* AppDelegate.swift */,
+				4DF415181F404E6E00BC4059 /* FancyTextField.swift */,
 				4DF414FA1F3F6A5F00BC4059 /* MainViewController.swift */,
 				4DF414FF1F3F6A5F00BC4059 /* Assets.xcassets */,
 				4DF415011F3F6A5F00BC4059 /* LaunchScreen.storyboard */,
@@ -348,6 +351,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DF415191F404E6E00BC4059 /* FancyTextField.swift in Sources */,
 				4DF414FB1F3F6A5F00BC4059 /* MainViewController.swift in Sources */,
 				4DF414F91F3F6A5F00BC4059 /* AppDelegate.swift in Sources */,
 			);

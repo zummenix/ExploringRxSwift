@@ -24,14 +24,28 @@ class MainViewController: UIViewController {
         button.setTitle("Show Alert", for: .normal)
         view.addSubview(button)
 
-        constrain(button) { (button) in
+        let textField1 = FancyTextField(frame: .zero)
+        view.addSubview(textField1)
+
+        let textField2 = FancyTextField(frame: .zero)
+        view.addSubview(textField2)
+
+        constrain(button, textField1, textField2) { (button, textField1, textField2) in
+            textField1.top == textField1.superview!.top + 60.0
+            textField1.left == textField1.superview!.left + 20.0
+            textField1.right == textField1.superview!.right - 20.0
+
+            textField2.top == textField1.bottom + 20.0
+            textField2.left == textField1.left
+            textField2.right == textField1.right
+
             button.centerX == button.superview!.centerX
             button.centerY == button.superview!.centerY
             button.width == 200.0
             button.height == 44.0
         }
 
-        button.rx.tap.subscribe { [weak self] _ in
+        button.rx.tap.debounce(0.5, scheduler: MainScheduler.instance).subscribe { [weak self] _ in
             let alert = UIAlertController(title: "", message: "Simple message", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self?.present(alert, animated: true, completion: nil)

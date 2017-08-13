@@ -13,37 +13,59 @@ import RxCocoa
 
 class FancyTextField: UIView {
 
+    private let label = UILabel()
     private let textField = UITextField()
     private let grayLineView = UIView()
     private let colorLineView = UIView()
 
     private let disposeBag = DisposeBag()
 
+    var fieldName: String {
+        set {
+            label.text = newValue
+        }
+        get {
+            return label.text ?? ""
+        }
+    }
+
+    var text: ControlProperty<String> {
+        return textField.rx.text.orEmpty
+    }
+
     override init(frame: CGRect) {
         super.init(frame: frame)
+
+        label.font = UIFont.boldSystemFont(ofSize: 12.0)
+        label.textColor = #colorLiteral(red: 0.2605174184, green: 0.2605243921, blue: 0.260520637, alpha: 1)
+        addSubview(label)
 
         textField.borderStyle = .none
         addSubview(textField)
 
-        grayLineView.backgroundColor = #colorLiteral(red: 0.9750739932, green: 0.9750967622, blue: 0.9750844836, alpha: 1)
+        grayLineView.backgroundColor = #colorLiteral(red: 0.9333333333, green: 0.9333333333, blue: 0.9333333333, alpha: 1)
         addSubview(grayLineView)
 
         colorLineView.backgroundColor = #colorLiteral(red: 0.1764705926, green: 0.01176470611, blue: 0.5607843399, alpha: 1)
         addSubview(colorLineView)
 
-        constrain(textField, grayLineView, colorLineView) { (textField, grayLineView, colorLineView) in
-            textField.top == textField.superview!.top
+        constrain(label, textField, grayLineView, colorLineView) { (label, textField, grayLineView, colorLineView) in
+            label.top == label.superview!.top
+            label.left == label.superview!.left
+            label.right == label.superview!.right
+
+            textField.top == label.bottom
             textField.left == textField.superview!.left
             textField.right == textField.superview!.right
-            textField.height == 44.0
+            textField.height == 40.0
 
             grayLineView.top == textField.bottom
             grayLineView.left == textField.left
             grayLineView.right == textField.right
-            grayLineView.height == 1.0
+            grayLineView.height == 0.5
 
             colorLineView.top == grayLineView.top
-            colorLineView.height == grayLineView.height
+            colorLineView.height == 1.0
             colorLineView.bottom == colorLineView.superview!.bottom
         }
 
@@ -61,7 +83,7 @@ class FancyTextField: UIView {
 
         let active = textField.rx.controlEvent([.editingDidBegin]).map({ _ in true })
         let inactive = textField.rx.controlEvent([.editingDidEnd]).map({ _ in false })
-        Observable.of(active, inactive).merge().bind { [weak self] (active) in
+        Observable.of(active, inactive).merge().distinctUntilChanged().bind { [weak self] (active) in
             self?.layoutIfNeeded()
             if active {
                 colorLineInvisibleGroup.active = false

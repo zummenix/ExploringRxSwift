@@ -25,9 +25,11 @@ class MainViewController: UIViewController {
         view.addSubview(button)
 
         let textField1 = FancyTextField(frame: .zero)
+        textField1.fieldName = "First Name"
         view.addSubview(textField1)
 
         let textField2 = FancyTextField(frame: .zero)
+        textField2.fieldName = "Second Name"
         view.addSubview(textField2)
 
         constrain(button, textField1, textField2) { (button, textField1, textField2) in
@@ -45,7 +47,7 @@ class MainViewController: UIViewController {
             button.height == 44.0
         }
 
-        button.rx.tap.debounce(0.5, scheduler: MainScheduler.instance).subscribe { [weak self] _ in
+        button.rx.tap.subscribe { [weak self] _ in
             let alert = UIAlertController(title: "", message: "Simple message", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self?.present(alert, animated: true, completion: nil)

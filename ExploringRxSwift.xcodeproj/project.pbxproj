@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		202DE54D973689C54940E15B /* Pods_ExploringRxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DED2A28318567E0BBD5E90A9 /* Pods_ExploringRxSwift.framework */; };
 		4212618A73FABA8A2D0781CA /* Pods_ExploringRxSwiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F1E223BAE608A8FB1E051B3 /* Pods_ExploringRxSwiftTests.framework */; };
+		4DD91B9D1F51591A003E03DA /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD91B9C1F51591A003E03DA /* SettingsViewController.swift */; };
+		4DD91B9F1F5170FF003E03DA /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD91B9E1F5170FF003E03DA /* SettingsCell.swift */; };
 		4DF414F91F3F6A5F00BC4059 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF414F81F3F6A5F00BC4059 /* AppDelegate.swift */; };
 		4DF414FB1F3F6A5F00BC4059 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF414FA1F3F6A5F00BC4059 /* MainViewController.swift */; };
 		4DF415001F3F6A5F00BC4059 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DF414FF1F3F6A5F00BC4059 /* Assets.xcassets */; };
@@ -29,6 +31,8 @@
 
 /* Begin PBXFileReference section */
 		0639F7733AEDD3EAB5C8B151 /* Pods-ExploringRxSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExploringRxSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ExploringRxSwift/Pods-ExploringRxSwift.debug.xcconfig"; sourceTree = "<group>"; };
+		4DD91B9C1F51591A003E03DA /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		4DD91B9E1F5170FF003E03DA /* SettingsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
 		4DF414F51F3F6A5F00BC4059 /* ExploringRxSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExploringRxSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DF414F81F3F6A5F00BC4059 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4DF414FA1F3F6A5F00BC4059 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -92,6 +96,8 @@
 				4DF414F81F3F6A5F00BC4059 /* AppDelegate.swift */,
 				4DF415181F404E6E00BC4059 /* FancyTextField.swift */,
 				4DF414FA1F3F6A5F00BC4059 /* MainViewController.swift */,
+				4DD91B9C1F51591A003E03DA /* SettingsViewController.swift */,
+				4DD91B9E1F5170FF003E03DA /* SettingsCell.swift */,
 				4DF414FF1F3F6A5F00BC4059 /* Assets.xcassets */,
 				4DF415011F3F6A5F00BC4059 /* LaunchScreen.storyboard */,
 				4DF415041F3F6A5F00BC4059 /* Info.plist */,
@@ -354,6 +360,8 @@
 				4DF415191F404E6E00BC4059 /* FancyTextField.swift in Sources */,
 				4DF414FB1F3F6A5F00BC4059 /* MainViewController.swift in Sources */,
 				4DF414F91F3F6A5F00BC4059 /* AppDelegate.swift in Sources */,
+				4DD91B9D1F51591A003E03DA /* SettingsViewController.swift in Sources */,
+				4DD91B9F1F5170FF003E03DA /* SettingsCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

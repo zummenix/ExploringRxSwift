@@ -21,7 +21,7 @@ class MainViewController: UIViewController {
         view.backgroundColor = .white
 
         let button = UIButton(type: .system)
-        button.setTitle("Show Alert", for: .normal)
+        button.setTitle("Settings", for: .normal)
         view.addSubview(button)
 
         let textField1 = FancyTextField(frame: .zero)
@@ -42,16 +42,22 @@ class MainViewController: UIViewController {
             textField2.right == textField1.right
 
             button.centerX == button.superview!.centerX
-            button.centerY == button.superview!.centerY
+            button.bottom == button.superview!.bottom - 20.0
             button.width == 200.0
             button.height == 44.0
         }
 
-        button.rx.tap.subscribe { [weak self] _ in
-            let alert = UIAlertController(title: "", message: "Simple message", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            self?.present(alert, animated: true, completion: nil)
-        }.disposed(by: disposeBag)
+        button.rx.tap.subscribe(onNext: { [weak self] _ in
+            let bag = DisposeBag()
+            let onDone = PublishSubject<Void>()
+            onDone.take(1).subscribe(onNext: { [weak self] (_) in
+                self?.dismiss(animated: true, completion: nil)
+            }).disposed(by: bag)
+
+            let controller = SettingsViewController(viewModel: SettingsViewController.ViewModel(bag: bag, items: [], onDone: onDone))
+            let navigationController = UINavigationController(rootViewController: controller)
+            self?.present(navigationController, animated: true, completion: nil)
+        }).disposed(by: disposeBag)
     }
 }
 

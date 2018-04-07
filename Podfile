@@ -2,17 +2,16 @@ platform :ios, '10.0'
 use_frameworks!
 
 target 'ExploringRxSwift' do
-
-    pod 'RxSwift', '~> 3.6'
-    pod 'RxCocoa', '~> 3.6'
-    pod 'Cartography', '~> 1.1'
+    pod 'RxSwift', '~> 4.1'
+    pod 'RxCocoa', '~> 4.1'
+    pod 'Cartography', '~> 3.0'
 
 end
 
 target 'ExploringRxSwiftTests' do
 
-    pod 'RxBlocking', '~> 3.6'
-    pod 'RxTest', '~> 3.6'
+    pod 'RxBlocking', '~> 4.1'
+    pod 'RxTest', '~> 4.1'
 
 end
 
